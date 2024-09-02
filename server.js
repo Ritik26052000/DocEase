@@ -5,6 +5,7 @@ const userRouter = require("./routes/userRoutes");
 const documentRouter = require("./routes/documents");
 const folderRouter = require("./routes/folderRoutes");
 const auth = require("./middleware/auth");
+const projectRouter = require("./routes/projectRoutes");
 
 require("dotenv").config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api/auth", userRouter);
 app.use("/api/documents", auth, documentRouter);
 app.use("/api/folders", auth, folderRouter);
+app.use("/api", projectRouter);
 
 const PORT = process.env.PORT || 5000;
 const db_url = process.env.MONGODB_URL;
