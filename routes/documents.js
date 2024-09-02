@@ -1,6 +1,6 @@
 // routes/documents.js
 const { Router } = require("express");
-const Document = require("../models/document");
+const Document = require("../models/Document");
 const { transporter } = require("../config/mailerConfig");
 const sendEmail = require("../utils/sendEmail");
 
